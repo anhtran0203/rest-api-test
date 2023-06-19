@@ -3,6 +3,8 @@ package gss.workshop.testing.utils;
 import io.restassured.response.Response;
 import org.testng.Assert;
 
+import java.util.Collections;
+
 public class ValidationUtils {
 
   /**
@@ -23,5 +25,9 @@ public class ValidationUtils {
    */
   public static void validateStringEqual(Object expectedStr, Object actualStr) {
     Assert.assertEquals(expectedStr, actualStr);
+  }
+
+  public static void validateEmpty(Object list) {
+    Assert.assertNotEquals(Collections.EMPTY_LIST, list);
   }
 }
